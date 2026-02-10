@@ -5,7 +5,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
-model = genai.GenerativeModel("gemini-1.5-flash-002")
+model = genai.GenerativeModel("gemini-flash-latest")
 
 
 def plan_trip(city: str, days: int, weather: str, flights: str, hotels: str) -> str:
@@ -22,6 +22,7 @@ def plan_trip(city: str, days: int, weather: str, flights: str, hotels: str) -> 
 
     response = model.generate_content(prompt)
     return response.text
+
 
 
 
