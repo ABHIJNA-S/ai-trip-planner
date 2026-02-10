@@ -72,7 +72,7 @@ def create_trip_planner_agent() -> AgentExecutor:
         )
 
     llm = ChatGoogleGenerativeAI(
-        model="gemini-1.0-pro",
+        model="gemini-1.5-flash",
         temperature=0.7,
         max_output_tokens=2048,
         # The library will read GOOGLE_API_KEY from the environment.
@@ -127,6 +127,7 @@ def plan_trip(agent: AgentExecutor, city: str, num_days: int) -> Dict[str, Any]:
         }
 
     return parsed
+
 
 
 
